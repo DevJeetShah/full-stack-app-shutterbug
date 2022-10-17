@@ -1,0 +1,92 @@
+<%- include('partials/header') -%>
+
+<body class="welcomebody">
+  
+
+
+<% if(profile!= undefined) {%>
+
+
+
+  <nav class="navbar navbar-dark bg-dark sticky-top justify-content-end">
+  
+
+        <div class="text-center navbar-brand shutterbugheading me-auto ms-3">
+          <h1 class="font8 mb-0">Shutterbug</h1>
+        </div>
+
+        <div class="navbar-brand viewprofilebutton">
+
+          <a href="/profile/<%=profile._id%>" class="btn btn-primary">View profile</a>
+
+        </div>
+
+        <div class="navbar-brand logoutbutton">   
+
+            <a href="/logout" class="btn btn-primary">Logout</a>
+
+        </div>
+
+
+      
+  </nav>
+
+
+
+<div class="searchbox">
+
+
+      <div class="searchboxchild">
+        <form action="/searchResults" method="POST" id="location" class="input-group mb-3">
+
+            <input type="text" class="form-control searchboxchildinput" id="location" name="location" placeholder="enter your city (eg San Francisco/New York)">
+            <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+  
+        </form>
+      </div>
+
+
+
+</div>
+  <%} else {%>
+
+    <nav class="navbar navbar-dark bg-dark sticky-top justify-content-end">
+  
+
+        <div class="text-center navbar-brand shutterbugheading me-auto ms-3">
+          <h1 class="font8 mb-0">Shutterbug</h1>
+        </div>
+
+        <div class="navbar-brand logoutbutton">   
+
+            <a href="/logout" class="btn btn-primary">Logout</a>
+
+        </div>
+
+    </nav>
+
+
+
+      <div class="noprofile mx-5 d-flex flex-column justify-content-center align-items-center text-light font2">
+
+          <div class="d-flex justify-content-center align-items-center text-center">
+            
+          <h2 class="">Create a profile to start searching for photographers!</h2>
+
+          </div>
+
+          <div>
+            <a href="/profile" class="btn btn-primary">Create Profile Now!</a>
+          </div>
+
+      </div>
+
+  
+  <%} %>
+
+
+
+
+</body>
+
+<%- include('partials/footer') -%>

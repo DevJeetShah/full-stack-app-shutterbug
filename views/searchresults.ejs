@@ -1,0 +1,167 @@
+<%- include('partials/header') -%>
+
+
+<body class="searchresultsbody">
+  
+
+<nav class="navbar navbar-dark bg-dark sticky-top justify-content-around">
+  
+      <div class="navbar-brand">  
+
+      </div>
+          
+      <div class="text-center navbar-brand ">
+
+        <h1 class="font8 mb-0">Shutterbug</h1>
+
+
+      </div>
+    
+      <div class="navbar-brand">
+
+        <a class="btn btn-primary" href="/search">Home</a>
+
+      </div>
+  
+</nav>
+
+
+
+<% if(profiles.length === 0) {%>
+  
+  <div class="d-flex justify-content-center align-items-center">
+    <h2>No photographers found in your area:(</h2>
+  </div>
+
+<%} else {%>
+
+
+  <div class="accordion mobileaccordion sticky-top" id="accordionExample">
+    <h2 class="accordion-header" id="headingTwo">
+      <button class="accordion-button collapsed bg-dark text-light font3 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        Show filters
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+      <div class="accordion-body bg-dark text-light">
+        <div class="filterclass">
+            <form action="/searchFilter/<%=profiles[0].location%>" method="POST" id="filter" name="filter">
+    
+              <fieldset>
+                
+              
+                <div>
+                  <input type="checkbox" id="offerings" name="paid" value="paid photoshoot">
+                  <label for="paid">Paid photoshoot</label>
+                </div>
+              
+                <div>
+                  <input type="checkbox" id="offerings" name="free" value="free photoshoot">
+                  <label for="free">Free photoshoot</label>
+                </div>
+    
+                <div>
+                  <input type="checkbox" id="offerings" name="collaboration" value="collaboration">
+                  <label for="collaboration">Collaboration</label>
+                </div>
+    
+                <div>
+                  <input type="checkbox" id="offerings" name="mentorship" value="mentorship">
+                  <label for="mentorship">Mentorship</label>
+                </div>
+    
+              </fieldset>
+            
+              <button type="submit" class="btn btn-primary">Apply Filters</button>
+            
+            </form>
+         </div>
+      </div>
+  </div>
+</div>
+
+  
+
+<section class="sectionsearchresults">
+
+      <div class="container desktopfilter sidebar bg-dark text-light ms-0 ps-5">
+        <form action="/searchFilter/<%=profiles[0].location%>" method="POST" id="filter" name="filter">
+
+          <fieldset>
+            <legend>Filters:</legend>
+          
+            <div>
+              <input type="checkbox" id="offerings" name="paid" value="paid photoshoot">
+              <label for="paid">Paid photoshoot</label>
+            </div>
+          
+            <div>
+              <input type="checkbox" id="offerings" name="free" value="free photoshoot">
+              <label for="free">Free photoshoot</label>
+            </div>
+
+            <div>
+              <input type="checkbox" id="offerings" name="collaboration" value="collaboration">
+              <label for="collaboration">Collaboration</label>
+            </div>
+
+            <div>
+              <input type="checkbox" id="offerings" name="mentorship" value="mentorship">
+              <label for="mentorship">Mentorship</label>
+            </div>
+
+          </fieldset>
+        
+          <button type="submit" class="btn btn-primary">Apply Filters</button>
+        
+        </form>
+    </div>
+
+
+
+
+
+      <div class="container resultscontainer">
+
+        <div class=" justify-content-center mt-5">
+          <ul class="list-unstyled resultsclass">
+            <% for(var i=0; i<profiles.length; i++) {%>
+
+              <li class="col-6 justify-content-between mt-5">
+                <a href="/profile/<%= profiles[i]._id%>" class="btn btn-primary btn-sm">
+                View profile
+                </a>
+              </li>
+
+              <div class="d-flex">
+                    <div>
+                      <li><img class="searchresultprofileimg rounded border border-4 border-dark shadow mt-1 me-1" width="200" height="135" src="<%= profiles[i].image%>" alt=""></li>
+                    </div>
+
+                    <div class="font3 text-dark">
+                      <li><h4 class="fw-bold"> Name: <%=profiles[i].firstname %> </h4></li>
+                      <li><h4 class="fw-bold">Location: <%=profiles[i].location %></h4></li>
+                      <li><h4 class="fw-bold">Offerings: <%=profiles[i].offerings%></h4></li>
+                      <li><h4 class="fw-bold">Contact: <%=profiles[i].contact %></h4></li>
+                    </div>
+              </div>
+
+
+
+
+            <% } %>
+            </ul>
+        </div>
+      </div>  
+
+</section>
+
+
+<% }%>
+
+
+
+
+</body>
+
+<%- include('partials/footer') -%>

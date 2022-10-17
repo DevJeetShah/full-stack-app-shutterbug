@@ -1,0 +1,297 @@
+.welcomebody{
+
+
+
+  background-image: url(images/7.jpg);
+
+    
+}
+
+.userprofilebody{
+
+
+
+    background-image: url(images/3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  
+      
+  }
+
+
+.searchresultsbody{
+
+
+
+    background-image: url(images/1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+      
+  }
+
+  .profilebody{
+    background-image: url(images/2.jpg);
+  }
+
+
+  .indexbody{
+    background-image: url(images/5.jpg);
+
+
+  }
+
+  .loginbody{
+    background-image: url(images/5.jpg);
+  }
+
+  .signupbody{
+    background-image: url(images/4.jpg);
+  
+  }
+
+  .signupsection{
+    height: 88.3vh;
+  }
+
+  .indexpage{
+    height: 88.3vh;
+  }
+
+  .loginmain{
+
+    height: 88.3vh;
+
+  }
+
+  .searchbox{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+
+  
+  }
+
+/*   .shutterbug{
+
+    margin-right: 28%;
+  } */
+
+  .searchboxchild{
+
+    min-width: 26%;
+  }
+
+/*   .profiledetails{
+    width: 30%;
+  } */
+
+  .sectionsearchresults{
+    display: flex;
+
+  }
+
+  .sidebar{
+
+    width: 15%;
+    display: flex;
+    align-items: center;
+    height: 100vh; /* 91.5vh; */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left:0;
+  
+  }
+  
+
+.reviewbox{
+
+  width: 180%;
+}
+
+
+.form-control::-webkit-input-placeholder {
+  color: rgb(164, 170, 177);
+  font-style: italic;
+}
+
+.signupform{
+  width:25%
+}
+
+.profilefill{
+  width:40%
+}
+
+.updateprofile{
+
+  width:40%
+}
+
+
+
+
+.mobileaccordion{
+  display: none;
+}
+
+.accountinfomobile{
+  display: none;
+}
+
+.noprofile{
+  height: 88.3vh;
+}
+
+.searchresultprofileimg{
+  object-fit: cover;
+}
+
+
+/* media queries */
+
+/* phone dimensions */
+
+@media (max-width: 1199px){
+
+  .mobileaccordion{
+    display: block;
+    position: sticky;
+    top: 64px;
+    
+    width: 100%;
+
+
+  }
+
+  .desktopfilter{
+    display: none;
+  }
+
+
+  .searchboxchild{
+
+
+    min-width: 88%;
+
+  }
+
+  .viewprofilebutton{
+    margin-right: 2%;
+  }
+
+  .logoutbutton{
+    margin-right: 2%;
+  }
+
+  .accountinfo{
+    display: none;
+  }
+
+  .accountinfomobile{
+    display: block;
+  }
+
+  .signupform{
+    min-width:75%
+  }
+
+  .profilefill{
+    min-width:75%
+  }
+  
+  .updateprofile{
+  
+    min-width:75%
+  }
+  
+
+  .signupheading{
+    margin-left: 12%;
+
+  }
+
+/*   .indexhome{
+    color: beige
+  }
+ */
+  .welcomebody{
+
+
+
+    background-image: url(images/7.jpg);
+/*     background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover; */
+    background-position: 0% 50%;
+  
+      
+  }
+
+  .searchresultsbody{
+
+
+
+    background-image: url(images/8.jpg);
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    
+/*     background-position: 0% 50%; */
+      
+  }
+
+  .indexbody{
+    background-image: url(images/3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+/*     background-position: 50% 15%; */
+
+  }
+
+  .loginbody{
+    background-image: url(images/3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+  }
+
+  .signupbody{
+    background-image: url(images/4.jpg);
+    background-position: 32% 8%;
+  
+  }
+
+}
+
+
+
+
+
+/* laptop dimensions */
+
+
+@media (min-width:1200px) and (max-width: 1910px){
+
+  .resultsclass{
+    margin-left: 14%;
+  }  
+/*   .resultscontainer{
+    margin-right: 0%;
+  } */
+
+  
+
+  
+}
+
+
+.accordion-button:after {
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23ffffff'><path fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/></svg>") !important;
+}

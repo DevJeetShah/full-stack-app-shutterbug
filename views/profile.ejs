@@ -1,0 +1,166 @@
+<%- include('partials/header') -%>
+
+<body class="profilebody">
+  
+  <nav class="navbar navbar-dark bg-dark sticky-top justify-content-around">
+  
+        <div class="navbar-brand">  
+
+        </div>
+      
+        <div class="text-center navbar-brand ">
+          <h1 class="font8 mb-0">Shutterbug</h1>
+        </div>
+      
+        <div class="navbar-brand">
+          <a class="btn btn-primary" href="/search">Home</a>
+        </div>
+  
+  </nav>
+
+  <div class="accountinfomobile .d-xl-none">
+    <div class="font4 text-light d-flex flex-column align-items-center justify-content-center mt-3">
+      <h5>Account Info:</h5>
+      <h4>Username: <%=user.userName%></h4>
+      <h4>Email: <%=user.email%></h4>
+    </div>
+  </div>
+
+        <div class="container">
+          <div class="mt-1">
+            <div class="d-flex justify-content-around align-items-center text-light">
+
+                    <div class="accountinfo">
+                      <div class="font4">
+                        <h5>Account Info:</h5>
+                        <h4>Username: <%=user.userName%></h4>
+                        <h4>Email: <%=user.email%></h4>
+                      </div>
+                    </div>
+
+
+
+                    <% if(profile == undefined) {%>
+
+
+                       <div>
+                        <% if (locals.messages.errors) { %>
+                          <% messages.errors.forEach( el => { %>
+                              <div class="alert alert-danger"><%= el.msg %></div>
+                          <% }) %>    
+                      <% } %>
+                      <% if (locals.messages.info) { %>
+                          <% messages.info.forEach( el => { %>
+                              <div class="alert alert-info"><%= el.msg %></div>
+                          <% }) %>    
+                      <% } %>
+  
+                       </div>
+
+
+
+                    <div class="profilefill mt-5">
+
+
+                      
+                      <h2 class="text-center font3">Fill out all the fields below to create your new profile</h2>
+                      <form action="/profile/createProfile" enctype="multipart/form-data" method="POST">
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="firstName" name="firstName">
+                        </div>
+                        <div class="mb-3">
+                          <label for="lastName" class="form-label">Last Name</label>
+                          <input type="text" class="form-control" id="lastName" name="lastName">
+                      </div>
+                        <div class="mb-3">
+                          <label for="location" class="form-label">Location</label>
+                          <textarea class="form-control" id="location" name="location"></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="offerings" class="form-label">Offerings</label>
+                          <textarea class="form-control" id="offerings" name="offerings" placeholder="paid photoshoot, free photoshoot, collaboration, mentorship"></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="contact" class="form-label">Contact</label>
+                          <textarea class="form-control" id="contact" name="contact" placeholder="999-999-9999"></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="bio" class="form-label">Bio</label>
+                          <textarea class="form-control" id="bio" name="bio"></textarea>
+                        </div>
+                        <div class="mb-3">
+                          <label for="imgUpload" class="form-label">Image</label>
+                          <input type="file" class="form-control" id="imageUpload" name="file">
+                        </div>
+                        <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+                      </form>
+                    </div>
+
+
+
+
+                    <%} else {%>
+
+
+
+                      <div class="updateprofile mt-5">
+                        
+                        
+                        <div>
+                          <% if (locals.messages.errors) { %>
+                            <% messages.errors.forEach( el => { %>
+                                <div class="alert alert-danger"><%= el.msg %></div>
+                            <% }) %>    
+                        <% } %>
+                        <% if (locals.messages.info) { %>
+                            <% messages.info.forEach( el => { %>
+                                <div class="alert alert-info"><%= el.msg %></div>
+                            <% }) %>    
+                        <% } %>
+    
+                        </div>
+
+                        <h2>Update Profile</h2>
+                        <form action="/profile/updateProfile/<%= profile._id %>?_method=PUT" enctype="multipart/form-data" method="POST">
+                          <div class="mb-3">
+                              <label for="firstName" class="form-label">First Name</label>
+                              <input type="text" class="form-control" id="firstName" name="firstName">
+                          </div>
+                          <div class="mb-3">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="lastName" name="lastName">
+                        </div>
+                          <div class="mb-3">
+                            <label for="location" class="form-label">Location</label>
+                            <textarea class="form-control" id="location" name="location"></textarea>
+                          </div>
+                          <div class="mb-3">
+                            <label for="offerings" class="form-label">Offerings</label>
+                            <textarea class="form-control" id="offerings" name="offerings" placeholder="paid photoshoot, free photoshoot, collaboration, mentorship"></textarea>
+                          </div>
+                          <div class="mb-3">
+                            <label for="contact" class="form-label">Contact</label>
+                            <textarea class="form-control" id="contact" name="contact" placeholder="999-999-9999"></textarea>
+                          </div>
+                          <div class="mb-3">
+                            <label for="bio" class="form-label">Bio</label>
+                            <textarea class="form-control" id="bio" name="bio"></textarea>
+                          </div>
+                                  <div class="mb-3">
+                            <label for="imgUpload" class="form-label">Image</label>
+                            <input type="file" class="form-control" id="imageUpload" name="file">
+                          </div>
+                          <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+                        </form>
+                      </div>
+
+
+                   <%}%>                  
+            </div>
+          </div>
+       </div>
+
+
+</body>
+<%- include('partials/footer') -%>

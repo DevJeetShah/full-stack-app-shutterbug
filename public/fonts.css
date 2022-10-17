@@ -1,0 +1,60 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:opsz@8..144&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+
+
+
+.font1{
+    font-family: 'Roboto Mono';
+}
+
+
+.font2{
+    font-family: 'Poppins', sans-serif;
+
+
+}
+
+
+.font3{
+    font-family: 'Roboto Serif', serif;
+
+    }
+
+.font4{
+
+    font-family: 'Merriweather', serif;
+
+}
+
+
+.font5{
+ 
+        font-family: 'Playfair Display', serif;
+
+    }
+    
+.font6{
+ 
+    font-family: 'Roboto', sans-serif;
+
+    }
+
+.font7{
+    font-family: 'Roboto Slab', serif;
+}
+
+
+
+.font8{
+
+    font-family: 'Playfair Display', serif;
+
+}
+    

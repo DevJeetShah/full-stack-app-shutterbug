@@ -1,0 +1,203 @@
+<%- include('partials/header') -%>
+
+  
+<body class="userprofilebody">
+  
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top justify-content-around">
+  
+  <div class="navbar-brand me-0">  
+    
+      <%if(profile.user == user.id){ %>
+            <div class="">
+              <a class="btn btn-primary" href="/profile">Edit Profile</a>
+            </div>
+           
+      
+      <% } else { %>
+        
+      
+      
+          <button class="btn btn-primary" onclick="history.back()">Go Back</button>
+        
+      <% } %>
+   </div>
+
+
+
+  <div class="text-center navbar-brand me-0">
+    <h1 class="font8 mb-0">Shutterbug</h1>
+
+  </div>
+
+  <div class="navbar-brand text-center me-0">
+    <a class="btn btn-primary" href="/search">Home</a>
+  </div>
+
+</nav>
+
+
+<div class="section">
+
+  <div class="container">
+        <div class="userprofilesection pt-5 text-dark row">
+
+          <div class="col-md">
+            <div class="profilepic card bg-transparent border-0">
+              <div class="card-body d-flex flex-column align-items-center">
+                <img class="rounded img-fluid shadow" height="500px" width="500px" src="<%= profile.image%>" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md">
+
+            <div class="profiledetails card bg-transparent border-0">
+              <div class="card-body">
+                <div class="font1">
+            
+                  <h3> First Name: <%=profile.firstname %></h3>
+                  <h3 class="mt-3">Last Name: <%=profile.lastname %></h3>
+                  <h3 class="mt-3">Location: <%=profile.location %></h3>
+                  <h3 class="text-wrap"> Offerings: <%=profile.offerings%></h3>
+                  <h3 class="mt-3">Bio: <%=profile.bio%> </h3>
+                  <h3 class="mt-3">Contact: <%=profile.contact%> </h3>
+                </div>
+              </div>
+            </div>
+          
+          </div>
+
+
+
+                <!-- Review section -->
+
+                <% if(profile.user == user.id) {%>
+                  <!-- nothing -->
+                <% } else
+
+                {%>
+
+          <div class="col-md">
+                <section class="p-5 card bg-transparent postreview border-0">
+
+                  <div class="container d-flex flex-column align-items-center card-body">
+                      
+                        <div class="reviewheading text-dark font8">
+                          <h2>Leave a Review!</h2>
+                        </div>
+                  
+                        <div class="reviewstars">
+                          <form action="/profile/createProfileReview/<%=profile._id%>" method="POST" class="mb-3 validated-form" novalidate>
+                            <!-- <div class="mb-3">
+                                <label class="form-label" for="rating">Rating</label>
+                                <input class="form-range" type="range" min="1" max="5" name="review[rating]" id="rating">
+                            </div> -->
+
+                            <div class="rating" >
+                              <input id="rating-5" type="radio" name="rating" value="5"/><label for="rating-5"><i class="fas fa-2x fa-star"></i></label>
+                              <input id="rating-4" type="radio" name="rating" value="4"/><label for="rating-4"><i class="fas fa-2x fa-star"></i></label>
+                              <input id="rating-3" type="radio" name="rating" value="3"/><label for="rating-3"><i class="fas fa-2x fa-star"></i></label>
+                              <input id="rating-2" type="radio" name="rating" value="2"/><label for="rating-2"><i class="fas fa-2x fa-star"></i></label>
+                              <input id="rating-1" type="radio" name="rating" value="1"/><label for="rating-1"><i class="fas fa-2x fa-star"></i></label>
+                            </div>
+                                  
+                                
+                            
+                            
+                            <div class="d-flex flex-column align-items-center">
+                                  <div class="mb-3 reviewbox">
+                                    <label for="review" class="form-label"></label>
+                                    <textarea class="form-control" id="review" name="review" placeholder="write your experience you had with the training"></textarea>
+                                  </div>
+
+                                  <div class="">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                  </div> 
+                            </div>
+
+                          </form>
+                        </div>
+
+                    </div>
+                </section>
+
+                <% } %>
+
+          </div> <!-- col class ends -->
+          
+        </div> <!-- row class ends -->
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+<!--   reviews posted by users -->
+
+
+<div class="reviewsbyuser font1 d-flex flex-column justify-content-center align-items-center pt-5">
+
+          <div class="reviewsbyuserchild1 justify-content-center">
+                  <div>
+                    <h3>Total Reviews: <%= totalReviews %></h3>
+                  </div>
+
+                <% if(isNaN(average)) {%>
+
+                  <div>
+                    <h3>Average Rating: No ratings yet</h3>
+                  </div>
+
+                <% } else {%>
+
+                  <div class="mb-5">
+                    <h3>Average Rating: <%= average %></h3>
+                  </div>
+
+                <% }%>  
+          </div>
+
+
+
+          <div class="container reviewsbyuserchild2 d-flex flex-column justify-content-center align-items-center">
+              <div>
+                  <ul class="list-unstyled">
+                    <% for(var i=0; i<reviews.length; i++) {%>
+                      <ul class="mt-5">
+                  
+                        <% for(var j=0; j<reviews[i].rating; j++) {%>
+                        
+                            <li class="d-inline text-warning">
+                              <i class="fas fa-2x fa-star"></i>
+                            </li>
+                        
+                        <% } %>
+                      </ul>
+                
+                      <li class="font1">
+                      <h3><%= reviews[i].review %></h3>  
+                      </li>
+                  
+                      <li><span>-</span><strong> <%=reviews[i].revFirstName %> <%=reviews[i].revLastName %></strong></li> 
+                    <% } %>
+                    </ul>
+              </div>
+          </div> <!-- reviewsbyuserchild2 class ends -->
+
+
+</div> <!-- reviewsbyuser class ends -->
+
+
+
+
+</body>
+
+
+<%- include('partials/footer') -%>
