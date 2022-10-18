@@ -5,7 +5,7 @@ A full stack application for photography enthusiasts to meet other photographers
 
 ## How It's Made:
 
-**Tech used:** JavaScript, CSS, Bootstrap, MongoDB, Express, EJS, Passport and Nodejs
+**Tech used:** HTML, CSS, JavaScript, Bootstrap, MongoDB, Express, EJS, Passport and Nodejs
 
 The idea to build this app came from a personal experience of struggling to not just find an affordable photographer, but also find people who just wants to go out, take each other's pictures with their camera, all while not having to spend money for it.
 
