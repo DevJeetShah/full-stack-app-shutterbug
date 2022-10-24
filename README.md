@@ -5,7 +5,7 @@ Shutterbug is a full stack web application for photography enthusiasts to find a
 
 ## How It's Made:
 
-**Tech used:** HTML, CSS, JavaScript, Bootstrap, MongoDB, Express, EJS, Nodejs
+**Tech used:** HTML, CSS, JavaScript, Bootstrap, MongoDB, Express, EJS, Passport and Nodejs
 
 The idea to build this app came from a personal experience of struggling to not just find an affordable photographer, but also find people who just wants to go out, take each other's pictures with their camera, all while not having to spend money for it.
 
@@ -29,7 +29,7 @@ I finished off the project with a touch of bootstrap and custom css for styling.
 
 ## Optimizations
 
-1. Initially, I had only included a user's ability to leave a review, and it felt like it was missing something. So not only I added a user's ability to be able to rate a review, but also be able to view the total amount of reviews and average rating on any user's profile. And the fun part of creating a rating functionality was that I was able to use my creative power and use a font awesome class in a for loop and make them all inline, so the stars are all right next to each other.
+1. Initially, I had only included a user's ability to leave a review, and it felt like it was missing something. So not only I added a user's ability to be able to rate a review, but also be able to view the total amount of reviews and average rating on any user's profile. And the fun part of creating a rating functionality was that, through some creativity, I came up with the idea of using a font awesome stars class but in a for loop, and styling them all inline. The result was yellow stars all aligning next to each other.
 
 2. Included a drop down accordion for the seach filter functionality for mobile and tablet screen resolution to make the UI look clean, easy to use and beautiful.
 
