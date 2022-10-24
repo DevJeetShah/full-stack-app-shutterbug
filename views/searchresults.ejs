@@ -121,38 +121,35 @@
 
 
 
-      <div class="container resultscontainer">
-
-        <div class=" justify-content-center mt-5">
-          <ul class="list-unstyled resultsclass">
-            <% for(var i=0; i<profiles.length; i++) {%>
-
-              <li class="col-6 justify-content-between mt-5">
-                <a href="/profile/<%= profiles[i]._id%>" class="btn btn-primary btn-sm">
-                View profile
-                </a>
-              </li>
-
-              <div class="d-flex">
-                    <div>
-                      <li><img class="searchresultprofileimg rounded border border-4 border-dark shadow mt-1 me-1" width="200" height="135" src="<%= profiles[i].image%>" alt=""></li>
-                    </div>
-
-                    <div class="font3 text-dark">
-                      <li><h4 class="fw-bold"> Name: <%=profiles[i].firstname %> </h4></li>
-                      <li><h4 class="fw-bold">Location: <%=profiles[i].location %></h4></li>
-                      <li><h4 class="fw-bold">Offerings: <%=profiles[i].offerings%></h4></li>
-                      <li><h4 class="fw-bold">Contact: <%=profiles[i].contact %></h4></li>
-                    </div>
-              </div>
+    <div class="container resultscontainer">
+      <div class="justify-content-center mt-5">
+        <ul class="list-unstyled resultsclass">
+          <% for(var i=0; i<profiles.length; i++) {%>
 
 
+            <div class="profilecard d-flex bg-dark rounded py-3 ps-2 flex-wrap flex-sm-nowrap mt-2" style="max-width: 560px;">
+
+                  <div class="d-flex align-items-center flex-column">
+                    <li><img class="searchresultprofileimg rounded border border-4 border-primary shadow me-1" width="200" height="135" src="<%= profiles[i].image%>" alt=""> </li>
+                    <a href="/profile/<%= profiles[i]._id%>" class="btn btn-primary btn-sm mt-1">
+                      View profile
+                      </a>
+                  </div>
+
+                  <div class="font1 text-light ms-sm-2 mt-2">
+                    <li><h5 class="">Name: <%=profiles[i].firstname %> </h5></li>
+                    <li><h5 class="">Location: <%=profiles[i].location %></h5></li>
+                    <li><h5 class="">Offerings: <%=profiles[i].offerings%></h5></li>
+                    <li><h5 class="">Contact: <%=profiles[i].contact %></h5></li>
+
+                  </div>
+            </div>
 
 
-            <% } %>
-            </ul>
-        </div>
-      </div>  
+          <% } %>
+        </ul>
+      </div>
+    </div>  
 
 </section>
 

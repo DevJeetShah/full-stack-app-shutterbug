@@ -1,5 +1,5 @@
 # Shutterbug App
-A full stack application for photography enthusiasts to meet other photographers in the area
+Shutterbug is a full stack web application for photography enthusiasts to find and meet other photographers in the area
 
 ![](public/images/shuttergif1.gif)
 
