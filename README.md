@@ -3,6 +3,10 @@ Shutterbug is a full stack web application for photography enthusiasts to find a
 
 Live site: https://shutterbug.cyclic.app/
 
+Demo Account Credentials:
+email: demotest@test.com
+password: demotest
+
 ![](public/images/shuttergif1.gif)
 
 ## How It's Made:
